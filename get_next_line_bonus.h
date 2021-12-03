@@ -1,10 +1,9 @@
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
-# define BUFFERSIZE 42
+# include <limits.h>
 # include <fcntl.h> 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 char	*get_next_line(int fd);
 char	*get_string_line(char *string);

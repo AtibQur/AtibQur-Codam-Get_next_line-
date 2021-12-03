@@ -1,5 +1,4 @@
 #include "get_next_line_bonus.h"
-#include <limits.h>
 
 char	*ft_strjoin(char *s1, char *s2)
 {
@@ -78,14 +77,14 @@ char	*get_string_line(char *string)
 
 char	*ft_read_lines(int fd, char *string)
 {
-	char	buff[BUFFERSIZE + 1];
+	char	buff[BUFFER_SIZE + 1];
 	int		string_len;
 
 	string_len = 1;
 	buff[0] = '\0';
 	while (!ft_find_char(buff, '\n') && string_len != 0)
 	{
-		string_len = read(fd, buff, BUFFERSIZE);
+		string_len = read(fd, buff, BUFFER_SIZE);
 		if (string_len == -1)
 		{
 			return (NULL);
@@ -106,14 +105,14 @@ char	*get_next_line(int fd)
 	static char		*string[OPEN_MAX];
 	char			*return_line;
 
-	if (fd < 0 || BUFFERSIZE <= 0 || fd > OPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
 		return (NULL);
-	*string = ft_read_lines(fd, *string);
-	if (!*string)
+	string[fd] = ft_read_lines(fd, string[fd]);
+	if (!string[fd])
 		return (NULL);
-	return_line = get_string_line(*string);
+	return_line = get_string_line(string[fd]);
 	if (!return_line)
 		return (NULL);
-	*string = ft_rewrite_string(*string);
+	string[fd] = ft_rewrite_string(string[fd]);
 	return (return_line);
 }

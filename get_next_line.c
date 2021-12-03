@@ -77,14 +77,14 @@ char	*get_string_line(char *string)
 
 char	*ft_read_lines(int fd, char *string)
 {
-	char	buff[BUFFERSIZE + 1];
+	char	buff[BUFFER_SIZE + 1];
 	int		string_len;
 
 	string_len = 1;
 	buff[0] = '\0';
 	while (!ft_find_char(buff, '\n') && string_len != 0)
 	{
-		string_len = read(fd, buff, BUFFERSIZE);
+		string_len = read(fd, buff, BUFFER_SIZE);
 		if (string_len == -1)
 		{
 			return (NULL);
@@ -105,7 +105,7 @@ char	*get_next_line(int fd)
 	static char		*string;
 	char			*return_line;
 
-	if (fd < 0 || BUFFERSIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	string = ft_read_lines(fd, string);
 	if (!string)

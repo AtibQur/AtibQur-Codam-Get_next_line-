@@ -1,6 +1,5 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFFERSIZE 42
 # include <fcntl.h> 
 # include <unistd.h>
 # include <stdlib.h>
