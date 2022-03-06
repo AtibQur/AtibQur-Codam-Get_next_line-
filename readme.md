@@ -11,15 +11,15 @@ The aim of this project is to learn how static variables work together with read
 <table>
   <tr>
     <td>read()</td>
-    <td></td>
+    <td>read from a file descriptor</td>
   </tr>
   <tr>
     <td>malloc()</td>
-    <td></td>
+    <td>malloc allocates memory and returns a pointer to it</td>
   </tr>
   <tr>
     <td>free()</td>
-    <td></td>
+    <td>free deallocates the memory previously allocated by a call to malloc</td>
   </tr>
 </table>
 
@@ -44,4 +44,6 @@ cd path_to_get_next_line && make
 <pre>
 #include "get_next_line.h"
 </pre>
+<p>Create one or multiple .txt files and open() the file in the main function. Call get_next_line().</p>
 <h2>Third-party testers</h2>
+<li>Tripouille - gnlTester // https://github.com/Tripouille/gnlTester</li>
